@@ -1,0 +1,126 @@
+{
+  "structure": [
+    {
+      "name": "application",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "controller",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "helloController.py",
+              "is_folder": false,
+              "content": "helloController.tpl"
+            }
+          ]
+        },
+        {
+          "name": "model",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "test.py",
+              "is_folder": false,
+              "content": "test.tpl"
+            }
+          ]
+        },
+        {
+          "name": "view",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "helloHandler.py",
+              "is_folder": false,
+              "content": "helloHandler.tpl"
+            }
+          ]
+        },
+        {
+          "name": "router.py",
+          "is_folder": false,
+          "content": "router.tpl"
+        },
+        {
+          "name": "__init__.py",
+          "is_folder": false,
+          "content": "__init__.tpl"
+        }
+      ]
+    },
+    {
+      "name": "config",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "config.py",
+          "is_folder": false,
+          "content": "config.tpl"
+        }
+      ]
+    },
+    {
+      "name": "docker",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "docker-compose.yml",
+          "is_folder": false,
+          "content": "docker-compose.tpl"
+        },
+        {
+          "name": "start.sh",
+          "is_folder": false,
+          "content": "start.tpl"
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "is_folder": true,
+      "child": []
+    },
+    {
+      "name": "test",
+      "is_folder": true,
+      "child": []
+    },
+    {
+      "name": "tools",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "const.py",
+          "is_folder": false,
+          "content": "const.tpl"
+        },
+        {
+          "name": "error.py",
+          "is_folder": false,
+          "content": "error.tpl"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "is_folder": false,
+      "content": ".gitignore.tpl"
+    },
+    {
+      "name": "gunicorn.conf",
+      "is_folder": false,
+      "content": "gunicorn.tpl"
+    },
+    {
+      "name": "requirements.txt",
+      "is_folder": false,
+      "content": "requirements.tpl"
+    },
+    {
+      "name": "server.py",
+      "is_folder": false,
+      "content": "server.tpl"
+    }
+  ]
+}
