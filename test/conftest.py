@@ -1,19 +1,29 @@
 import pytest
-from summer import create_server
+from py_summer import app as testapp, db, engine, Base
+import os
+import tempfile
 
 
 @pytest.fixture
 def app():
-    """Create and configure a new app instance for each test."""
+    @testapp.route('/hello')
+    def get_user():
+        return 'py_summer'
 
-    app = create_server({
-        'TESTING': True,
-    })
+    db_fd, db_path = tempfile.mkstemp()
+    yield testapp, db_path
+    os.close(db_fd)
+    os.unlink(db_path)
 
-    yield app
+
+@pytest.yield_fixture()
+def db():
+    Base.metadata.create_all(engine)
+    yield db
+    Base.metadata.drop_all(engine)
 
 
-@pytest.fixture
+@pytest.yield_fixture
 def client(app):
-    """A test client for the app."""
-    return app.test_client()
+    with app[0].test_client() as client:
+        yield client

@@ -55,12 +55,12 @@ def create_project(name, path):
     with open('./tpl/config.json', "r") as f:
         config = json.load(f)
     structure = config.get('structure')
-    _create_file_folder(structure, project_full_path)
+    _load_config(structure, project_full_path)
 
 
-def _create_file_folder(structure, project_full_path):
+def _load_config(structure, project_full_path):
     """
-    根据配置文件夹创建文件和文件夹
+    根据配置文件创建文件和文件夹
     :param structure: 配置文件
     :param project_full_path: 项目路径
     :return:
@@ -73,7 +73,7 @@ def _create_file_folder(structure, project_full_path):
 
         if is_folder:
             _create_folder(current_path)
-            _create_file_folder(child, current_path)
+            _load_config(child, current_path)
         else:
             tpl = item.get('content')
             _create_file(current_path, tpl)
@@ -111,3 +111,4 @@ if __name__ == '__main__':
     cli.add_command(create_tables)
     cli.add_command(create_project)
     cli()
+

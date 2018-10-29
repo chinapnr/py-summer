@@ -17,13 +17,17 @@ class DevelopmentConfig(Config):
     """
     开发环境配置
     """
+    TESTING = False
     DEBUG = True
     SQLITE_NAME = os.environ.get('SQLITE_NAME', default='dev.sqlite')
     SQLALCHEMY_DATABASE_URI = get_db_sqlite_uri(SQLITE_NAME)
-    IP_PORT = 8080
+    PORT = 8080
+    IP = '0.0.0.0'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_COMMIT_TEARDOWN = True
 
 
 class TestingConfig(Config):
     TESTING = True
+    PORT = 8080
+    IP = '0.0.0.0'
