@@ -1,8 +1,14 @@
-from application import db
+from application import Base, db
+from sqlalchemy import Column, Integer, String
 
 
-class Test(db.Model):
+class Test(Base):
+    # 建立用户信息表
     __tablename__ = 'test_table'
-    test_id = db.Column(db.Integer, primary_key=True)
-    test_name = db.Column(db.String(64), unique=True, nullable=False, index=True)
-    test_score = db.Column(db.SmallInteger)
+    uid = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(64), unique=True, nullable=False, index=True)
+    score = Column(Integer)
+
+    @staticmethod
+    def get_info_by_id(uid):
+        return db.query(Test).filter_by(uid=uid).first()

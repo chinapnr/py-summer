@@ -84,7 +84,28 @@
     {
       "name": "test",
       "is_folder": true,
-      "child": []
+      "child": [
+        {
+          "name": "db",
+          "is_folder": true,
+          "child": []
+        },
+        {
+          "name": "test_api.py",
+          "is_folder": false,
+          "content": "test_api.tpl"
+        },
+        {
+          "name": "test_db.py",
+          "is_folder": false,
+          "content": "test_db.tpl"
+        },
+        {
+          "name": "conftest.py",
+          "is_folder": false,
+          "content": "conftest.tpl"
+        }
+      ]
     },
     {
       "name": "tools",

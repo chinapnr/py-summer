@@ -3,7 +3,7 @@ import sys
 import click
 import shutil
 import json
-from py_summer import app, db
+# from py_summer import app, db
 
 if __name__ == '__main__':
     sys.path.insert(0, os.path.abspath(os.curdir))
