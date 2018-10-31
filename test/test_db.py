@@ -1,4 +1,4 @@
-from py_summer import  db
+from py_summer import db
 import pytest
 from py_summer.models import Test
 
