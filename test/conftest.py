@@ -19,7 +19,7 @@ def app():
 @pytest.yield_fixture()
 def db():
     Base.metadata.create_all(engine)
-    # yield db
+    yield db
     # Base.metadata.drop_all(engine)
 
 

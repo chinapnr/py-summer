@@ -1,6 +1,7 @@
 from setuptools import setup
 import io
 import re
+
 with io.open('py_summer/__init__.py', 'rt', encoding='utf8') as f:
     version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
@@ -12,7 +13,7 @@ setup(
     author='David Yi',
     author_email='wingfish@gmail.com',
     description='Simplify and strengthen the Python web server development, mainly RESTful server, use Flask as the backend.',
-    packages=['py_summer', 'py_summer/tools', 'demo', 'test'],
+    packages=['py_summer', 'demo', 'test'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

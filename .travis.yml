@@ -2,6 +2,12 @@ language: python
 python:
   - "3.6"
   - "3.7-dev"
+
+# build package test
+before_install:
+python setup.py sdist
+pip install ./dist/py_summer-1.0.0.tar.gz
+
 # command to install dependencies
 install:
   - pip install -r requirements.txt
