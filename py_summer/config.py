@@ -3,19 +3,29 @@ import os
 
 
 class Config(object):
+    """
+    配置文件类
+    """
     DEBUG = False
     TESTING = False
 
 
-# 生成 sqlite 数据库的 uri 字符串
 def get_db_sqlite_uri(db_name):
+    """
+    获取sqlite地址
+
+    :param:
+        * db_name(str): 数据库名称
+    :return:
+        * db_sqlite_uri(str): sqlite链接地址
+    """
     db_sqlite_uri = 'sqlite:///' + fff.get_abs_filename_with_sub_path('db', db_name)[1]
     return db_sqlite_uri
 
 
 class DevelopmentConfig(Config):
     """
-    开发环境配置
+    开发环境配置类
     """
     TESTING = False
     DEBUG = True
@@ -28,6 +38,9 @@ class DevelopmentConfig(Config):
 
 
 class TestingConfig(Config):
+    """
+    测试环境配置类
+    """
     TESTING = True
     PORT = 8080
     IP = '0.0.0.0'

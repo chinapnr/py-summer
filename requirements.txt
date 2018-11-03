@@ -2,6 +2,7 @@ pytest==3.6.2
 Flask==1.0.2
 SQLAlchemy==1.2.1
 fishbase==1.0.14
+click==6.7
 
 
 

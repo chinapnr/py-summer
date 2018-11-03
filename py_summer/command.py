@@ -3,7 +3,7 @@ import sys
 import click
 import shutil
 import json
-# from py_summer import app, db
+from py_summer import app, db
 
 if __name__ == '__main__':
     sys.path.insert(0, os.path.abspath(os.curdir))
@@ -20,6 +20,11 @@ def cli():
 def create_tables():
     """
     删除当前数据库内容，并创建数据库
+
+    :param:
+        * 无
+    :return:
+        * 无
     """
     click.echo(click.style('Create db tables.', fg='red'))
     db.drop_all()
@@ -32,6 +37,11 @@ def create_tables():
 def start_server(reload):
     """
     启动 server
+
+    :param:
+        * 无
+    :return:
+        * 无
     """
     click.echo(click.style('server start', fg='blue'))
     app.run(use_reloader=reload, host='127.0.0.1', port=app.config['IP_PORT'])
@@ -44,9 +54,12 @@ def start_server(reload):
 def create_project(name, path):
     """
     创建新项目
-    :param name: 项目路径
-    :param path: 项目名称
+
+    :param:
+        * name(str): 项目路径
+        * path(str): 项目名称
     :return:
+        无
     """
     project_full_path = os.path.join(path, name)
     if os.path.exists(project_full_path):
@@ -60,10 +73,13 @@ def create_project(name, path):
 
 def _load_config(structure, project_full_path):
     """
-    根据配置文件创建文件和文件夹
-    :param structure: 配置文件
-    :param project_full_path: 项目路径
+    加载生成代码的配置
+
+    :param:
+        * structure(str): 配置文件
+        * project_full_path(str): 项目路径
     :return:
+        无
     """
     for item in structure:
         name = item.get('name')
@@ -82,8 +98,11 @@ def _load_config(structure, project_full_path):
 def _create_folder(folder_path):
     """
     创建文件夹
-    :param folder_path:
+
+    :param:
+        * folder_path(str): 文件夹地址
     :return:
+        * 无
     """
     if os.path.exists(folder_path):
         shutil.rmtree(folder_path)
@@ -93,10 +112,13 @@ def _create_folder(folder_path):
 
 def _create_file(file_path, tpl_name):
     """
-    生成文件，根据模版
-    :param file_path:
-    :param tpl_name:
+    根据模版，生成文件
+
+    :param:
+        * file_path(str): 文件地址
+        * tpl_name(str): 模版名称
     :return:
+        * 无
     """
     tpl_file_path = os.path.join('.', 'tpl', tpl_name)
     _buffer = open(tpl_file_path, 'rb')

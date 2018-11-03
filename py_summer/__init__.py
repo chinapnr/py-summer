@@ -7,9 +7,23 @@ from sqlalchemy.orm import sessionmaker
 
 
 class Summer(Flask):
+    """
+    申明一个Summer类，目前继承自Flask
+    :param:
+       无
+    :returns:
+       无
+    """
 
     @staticmethod
     def load_conf(application):
+        """
+        加载自定义配置到当前的application对象中
+        :param:
+            * application(object): application 对象
+        :return:
+           无
+        """
         server_env = os.environ.get('SERVER_ENV', default='development')
         if server_env == 'development':
             application.config.from_object(DevelopmentConfig)
@@ -17,6 +31,14 @@ class Summer(Flask):
             application.config.from_object(TestingConfig)
 
     def create_server(self, test_config=None):
+        """
+        根据application对象创建serverr
+        :param:
+            * test_config(dict): application 对象
+        :return:
+           * application(object) application 对象
+        """
+
         application = Flask(__name__, instance_relative_config=True)
         application.config.from_mapping(
             SECRET_KEY='secret_key_only_test'
@@ -28,7 +50,6 @@ class Summer(Flask):
         else:
             # 如果传入 test 配置，则使用
             application.config.update(test_config)
-
         return application
 
 
