@@ -15,5 +15,5 @@ install:
 script:
   - pytest
 after_success:
-  - pytest --cov=py-summer test/
+  - pytest --cov=py_summer test/
   - coveralls
