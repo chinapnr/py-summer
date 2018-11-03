@@ -2,15 +2,19 @@ from fishbase import fish_file as fff
 import os
 
 
+
+
+
 class Config(object):
     """
     配置文件类
     """
     DEBUG = False
     TESTING = False
+    CURRENT_PATH = os.path.dirname('.')
 
 
-def get_db_sqlite_uri(db_name):
+def get_db_sqlite_uri(db_name, db_path=Config.CURRENT_PATH):
     """
     获取sqlite地址
 
@@ -19,7 +23,7 @@ def get_db_sqlite_uri(db_name):
     :return:
         * db_sqlite_uri(str): sqlite链接地址
     """
-    db_sqlite_uri = 'sqlite:///' + fff.get_abs_filename_with_sub_path('db', db_name)[1]
+    db_sqlite_uri = 'sqlite:///' + fff.get_abs_filename_with_sub_path(db_path, db_name)[1]
     return db_sqlite_uri
 
 
