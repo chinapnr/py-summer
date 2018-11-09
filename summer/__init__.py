@@ -1,14 +1,15 @@
 import os
 from flask import *
-from py_summer.config import DevelopmentConfig, TestingConfig
+from summer.config import DevelopmentConfig, TestingConfig
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from summer.command import cli
 
 
 class Summer(Flask):
     """
-    申明一个Summer类，目前继承自Flask
+    申明一个 Summer 类，目前继承自 Flask
     :param:
        无
     :returns:
@@ -18,7 +19,7 @@ class Summer(Flask):
     @staticmethod
     def load_conf(application):
         """
-        加载自定义配置到当前的application对象中
+        加载自定义配置到当前的 application 对象中
         :param:
             * application(object): application 对象
         :return:
@@ -32,7 +33,7 @@ class Summer(Flask):
 
     def create_server(self, test_config=None):
         """
-        根据application对象创建serverr
+        根据 application 对象创建 serverr
         :param:
             * test_config(dict): application 对象
         :return:
@@ -62,4 +63,4 @@ Session = sessionmaker(bind=engine)
 db = Session()
 
 
-__version__ = '1.0.0'
+__version__ = '0.0.1'

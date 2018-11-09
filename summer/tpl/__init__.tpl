@@ -1,4 +1,4 @@
-from py_summer import *
+from summer import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base

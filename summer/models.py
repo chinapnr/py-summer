@@ -1,8 +1,8 @@
-from py_summer import Base, db
+from summer import Base, db
 from sqlalchemy import Column, Integer, String
 
 
-class Test(Base):
+class UserModel(Base):
     """
     建立用户信息表
     """
@@ -17,8 +17,8 @@ class Test(Base):
         根据uid获取信息
 
         :param:
-          * uid(str): 用户id
+          * uid(str): 用户 id
         :return:
           * 查询结果
         """
-        return db.query(Test).filter_by(uid=uid).first()
+        return db.query(UserModel).filter_by(uid=uid).first()

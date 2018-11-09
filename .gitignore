@@ -108,3 +108,4 @@ venv.bak/
 
 # DB
 test/db/*
+dev.sqlite

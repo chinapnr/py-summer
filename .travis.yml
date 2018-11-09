@@ -6,7 +6,7 @@ python:
 # build package test
 before_install:
   - python setup.py sdist
-  - pip install ./dist/py_summer-1.0.0.tar.gz
+  - pip install ./dist/py_summer-0.0.1.tar.gz
 
 # command to install dependencies
 install:
@@ -15,5 +15,5 @@ install:
 script:
   - pytest
 after_success:
-  - pytest --cov=py_summer test/
+  - pytest --cov=summer test/
   - coveralls

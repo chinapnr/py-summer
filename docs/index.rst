@@ -6,8 +6,9 @@
 
 py-summer 介绍
 =====================================
+一个快速生成 Python Web 项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask ）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等。
 
-Simplify and strengthen the Python web server development, mainly RESTful server, use Flask as the backend.
+
 
 
 函数列表

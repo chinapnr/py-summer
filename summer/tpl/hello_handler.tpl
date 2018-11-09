@@ -1,5 +1,5 @@
 from fishbase import logger as log
-from application.controller.helloController import get_hello_content
+from application.controller.hello_controller import get_hello_content
 
 
 class Hello:

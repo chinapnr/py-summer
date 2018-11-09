@@ -1,5 +1,5 @@
 import pytest
-from py_summer import app as testapp, db, engine, Base
+from summer import app as testapp, db, engine, Base
 import os
 import tempfile
 
@@ -20,7 +20,7 @@ def app():
 def db():
     Base.metadata.create_all(engine)
     yield db
-    # Base.metadata.drop_all(engine)
+    Base.metadata.drop_all(engine)
 
 
 @pytest.yield_fixture

@@ -9,9 +9,9 @@
           "is_folder": true,
           "child": [
             {
-              "name": "helloController.py",
+              "name": "hello_controller.py",
               "is_folder": false,
-              "content": "helloController.tpl"
+              "content": "hello_controller.tpl"
             }
           ]
         },
@@ -20,9 +20,9 @@
           "is_folder": true,
           "child": [
             {
-              "name": "test.py",
+              "name": "user_model.py",
               "is_folder": false,
-              "content": "test.tpl"
+              "content": "user_model.tpl"
             }
           ]
         },
@@ -31,9 +31,9 @@
           "is_folder": true,
           "child": [
             {
-              "name": "helloHandler.py",
+              "name": "hello_handler.py",
               "is_folder": false,
-              "content": "helloHandler.tpl"
+              "content": "hello_handler.tpl"
             }
           ]
         },
@@ -86,11 +86,6 @@
       "is_folder": true,
       "child": [
         {
-          "name": "db",
-          "is_folder": true,
-          "child": []
-        },
-        {
           "name": "test_api.py",
           "is_folder": false,
           "content": "test_api.tpl"
@@ -111,11 +106,6 @@
       "name": "tools",
       "is_folder": true,
       "child": [
-        {
-          "name": "const.py",
-          "is_folder": false,
-          "content": "const.tpl"
-        },
         {
           "name": "error.py",
           "is_folder": false,
