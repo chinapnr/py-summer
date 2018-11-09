@@ -2,6 +2,9 @@ from setuptools import setup
 import io
 import re
 
+with io.open('README.rst', 'rt', encoding='utf8') as f:
+    readme = f.read()
+
 with io.open('summer/__init__.py', 'rt', encoding='utf8') as f:
     version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
@@ -13,7 +16,8 @@ setup(
     license='MIT',
     author='David Yi',
     author_email='wingfish@gmail.com',
-    description='一个快速生成 Python Web 项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask ）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等',
+    description='一个快速生成 Python Web 项目框架的工具',
+    long_description=readme,
     packages=['summer', 'demo', 'test'],
     package_data={
         "summer": ["tpl/*", "tpl/.*"],
