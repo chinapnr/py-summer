@@ -3,16 +3,14 @@
 py-summer
 ---------
 
-一个快速生成 Python Web
-项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask
-）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等。
+一个快速生成 Python Web 项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask ）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等。
 
 Installing
 ----------
 
 Install and update using pip:
 
-.. code:: python
+.. code::
 
     pip install -U py-summer
 
@@ -57,7 +55,7 @@ A Simple Example
 
 3. 运行项目
 
-   .. code:: python
+   .. code::
 
        python server.py
 
@@ -67,20 +65,22 @@ A Simple Example
 Features
 --------
 
-1. 支持 `Sanic <https://github.com/huge-success/sanic>`__ Sanic
-   是一个类似Flask的框架，支持以异步请求的方式处理请求。在 py-summer
-   中支持 Sanic 会是一个很好的选择，可以在处理性能和开发速度上得到提升。
+1. 支持 `Sanic <https://github.com/huge-success/sanic>`__
 
-2. 让后端差异进行统一 将 Sanic 和 Flask
-   相同功能的使用差异进行封装，用户无需关心不同后端带来的影响。可实现后端无缝切换。
+   Sanic 是一个类似Flask的框架，支持以异步请求的方式处理请求。在 py-summer 中支持 Sanic 会是一个很好的选择，可以在处理性能和开发速度上得到提升。
 
-目前计划封装功能点如下：
 
--  启动方式
--  路由处理
--  数据库处理
--  异常处理
--  常用插件
+2. 让后端差异进行统一
+
+   将 Sanic 和 Flask 相同功能的使用差异进行封装，用户无需关心不同后端带来的影响。可实现后端无缝切换。
+
+   目前计划封装功能点如下：
+    -  启动方式
+    -  路由处理
+    -  数据库处理
+    -  异常处理
+    -  常用插件
+
 
 3. 支持接口根据配置文件自动生成，进一步提高代码规范，开发效率。
 
