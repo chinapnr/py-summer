@@ -7,4 +7,4 @@ engine = create_engine(app.config.get('SQLALCHEMY_DATABASE_URI'))
 Session = sessionmaker(bind=engine)
 db = Session()
 
-__version__ = '0.0.1.1'
+__version__ = '0.0.1'
