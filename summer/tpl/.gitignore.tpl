@@ -105,7 +105,3 @@ venv.bak/
 
 # Pycharm
 .idea/*
-
-# DB
-test/db/*
-dev.sqlite

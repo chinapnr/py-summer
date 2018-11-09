@@ -1,0 +1,137 @@
+{
+  "structure": [
+    {
+      "name": "application",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "controller",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "hello_controller.py",
+              "is_folder": false,
+              "content": "hello_controller.tpl"
+            }
+          ]
+        },
+        {
+          "name": "model",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "user_model.py",
+              "is_folder": false,
+              "content": "user_model.tpl"
+            }
+          ]
+        },
+        {
+          "name": "view",
+          "is_folder": true,
+          "child": [
+            {
+              "name": "hello_handler.py",
+              "is_folder": false,
+              "content": "hello_handler.tpl"
+            }
+          ]
+        },
+        {
+          "name": "router.py",
+          "is_folder": false,
+          "content": "router.tpl"
+        },
+        {
+          "name": "__init__.py",
+          "is_folder": false,
+          "content": "__init__.tpl"
+        }
+      ]
+    },
+    {
+      "name": "config",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "config.py",
+          "is_folder": false,
+          "content": "config.tpl"
+        }
+      ]
+    },
+    {
+      "name": "docker",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "docker-compose.yml",
+          "is_folder": false,
+          "content": "docker-compose.tpl"
+        },
+        {
+          "name": "start.sh",
+          "is_folder": false,
+          "content": "start.tpl"
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "is_folder": true,
+      "child": []
+    },
+    {
+      "name": "test",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "test_api.py",
+          "is_folder": false,
+          "content": "test_api.tpl"
+        },
+        {
+          "name": "test_db.py",
+          "is_folder": false,
+          "content": "test_db.tpl"
+        },
+        {
+          "name": "conftest.py",
+          "is_folder": false,
+          "content": "conftest.tpl"
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "is_folder": true,
+      "child": [
+        {
+          "name": "error.py",
+          "is_folder": false,
+          "content": "error.tpl"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "is_folder": false,
+      "content": ".gitignore.tpl"
+    },
+    {
+      "name": "gunicorn.conf",
+      "is_folder": false,
+      "content": "gunicorn.tpl"
+    },
+    {
+      "name": "requirements.txt",
+      "is_folder": false,
+      "content": "requirements.tpl"
+    },
+    {
+      "name": "server.py",
+      "is_folder": false,
+      "content": "server.tpl"
+    }
+  ]
+}
