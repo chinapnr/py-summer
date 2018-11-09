@@ -16,21 +16,6 @@ def cli():
     """
 
 
-# @click.command()
-# def create_tables():
-#     """
-#     删除当前数据库内容，并创建数据库
-#     :param:
-#         * 无
-#     :return:
-#         * 无
-#     """
-#     click.echo(click.style('Create db tables.', fg='red'))
-#     db.drop_all()
-#     db.create_all()
-#     click.echo(click.style('Tables created success.', fg='blue'))
-
-
 @cli.command('start')
 @click.option('--reload', default=False, type=click.BOOL, help='是否自动重新加载服务')
 @click.option('--ip', default='127.0.0.1', type=click.STRING, help='IP地址', prompt='ip地址', required=False)
@@ -127,7 +112,5 @@ def _create_file(file_path, tpl_name):
 # server 主要执行过程
 if __name__ == '__main__':
     cli.add_command(start_server)
-    # cli.add_command(create_tables)
     cli.add_command(create)
     cli()
-
