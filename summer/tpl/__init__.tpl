@@ -1,4 +1,5 @@
-from py_summer import *
+import os
+from summer import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -24,6 +25,8 @@ app = Summer(__name__, instance_relative_config=True).create_server()
 app = load_conf(app)
 
 # 获得db对象
-BaseModel = declarative_base()
-engine = create_engine(app.config['DATABASE_URI'])
-db = sessionmaker(bind=engine)
+Base = declarative_base()
+engine = create_engine(app.config.get('SQLALCHEMY_DATABASE_URI'))
+Session = sessionmaker(bind=engine)
+db = Session()
+

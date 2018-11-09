@@ -1,15 +1,12 @@
-import pytest
-from summer import app as testapp, db, engine, Base
 import os
+import pytest
 import tempfile
+from application.router import app as testapp
+from application import db, engine, Base
 
 
 @pytest.fixture
 def app():
-    @testapp.route('/hello')
-    def get_user():
-        return 'py_summer'
-
     db_fd, db_path = tempfile.mkstemp()
     yield testapp, db_path
     os.close(db_fd)
@@ -25,5 +22,5 @@ def db():
 
 @pytest.yield_fixture
 def client(app):
-    with app[0].test_client() as client:
-        yield client
+    with app[0].test_client() as cli:
+        yield cli
