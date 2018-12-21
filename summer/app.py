@@ -1,5 +1,5 @@
 import os
-from flask import Flask, Blueprint
+from flask import *
 from summer.config import DevelopmentConfig, TestingConfig
 from sqlalchemy.ext.declarative import declarative_base
 

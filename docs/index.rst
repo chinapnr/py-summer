@@ -9,21 +9,20 @@
 py-summer
 ---------
 
-一个快速生成 Python Web
-项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask
-）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等。
+一个快速生成 Python Web 项目框架的工具，用户无需考虑后端框架（即支持多后端，目前支持 Flask）。支持自定义生成项目层级结构、接口。内容包含演示代码、测试用例等。
 
-Installing
-----------
+
+安装
+----
 
 Install and update using pip:
 
-.. code:: python
+.. code::
 
     pip install -U py-summer
 
-A Simple Example
-----------------
+示例
+----
 
 1. 生成一个新项目
 
@@ -63,14 +62,37 @@ A Simple Example
 
 3. 运行项目
 
-   .. code:: python
+   .. code::
 
        python server.py
 
    默认监听所有地址， 端口为 8080。测试页可访问
    http://127.0.0.1:8080/api/test
 
-Features
+
+生成的项目模块说明
+------------------
+通过上面的示例，我们生成了一个简单的 http web 服务，下面将对生成的目录中各模块做一下介绍，简单的文件已经在目录结构中有说明，这里将不在赘述。
+
+1. application
+
+这里是 web 应用程序的总目录，里面包含 model/view/controller， 即 web 服务的 MVC 部分，router.py 这里是设置整个项目路由的地方。
+
+2. config
+
+config 目录是整个工程的配置目录，里面通过类的形式来进行各种环境的配置，通过 application 下的 __init__.py 来导入配置信息。
+
+3. docker
+
+docker 中是 docker-compose 的配置文件，用来配置项目的部署环境，start.sh 是 docker 容器启动的入口文件。
+
+4. test
+
+test 这里是项目的单元测试模块，里面有一个 conftest.py 文件来配置测试信息，test_xxx.py 文件是具体的单元测试文件，这里使用 pytest.fixture 打通 server/client 进行测试，测试时无需额外启动 server 即可测试 server 接口。
+
+
+
+后续计划
 --------
 
 1. 集成 Flask 常用功能模块

@@ -9,6 +9,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CURRENT_PATH = os.path.dirname('.')
+    SQLALCHEMY_POOL_RECYCLE = 3600
 
 
 def get_db_sqlite_uri(db_name, db_path=Config.CURRENT_PATH):
