@@ -22,6 +22,7 @@ setup(
     package_data={
         "summer": ["tpl/*", "tpl/.*"],
     },
+    include_package_data=True,
     entry_points={"console_scripts": ["summer=summer:cli"]},
     classifiers=[
         'Development Status :: 4 - Beta',
